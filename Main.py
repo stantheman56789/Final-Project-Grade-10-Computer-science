@@ -33,11 +33,15 @@ def draw():
 
     #draw the caves at the top of the screen
     pygame.draw.rect(screen,('black'),[0,0,800,100])
+    
+    #line for where you cannot click the snakes
+    pygame.draw.line(screen,('red'),(0,100),(800,100),10)
+
+    #draw the caves
     for c in range(0,4):
         screen.blit(caves[c],(c*200,0))
 
-    #line for where you cannot click the snakes
-    pygame.draw.line(screen,('red'),(0,100),(800,100),5)
+
     
 
 while running:
