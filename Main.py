@@ -60,10 +60,9 @@ while text_scroll == True:
             text_scroll = False
     #location +=5 #moves the text up every loop
     
-    screen.fill((0,200,100))
+    screen.fill(('black'))
     
     pygame.display.flip()
-
 
 #setting up the cave pictures
 caves=[]
@@ -72,9 +71,6 @@ for c in range(0,4):
     cave=pygame.transform.rotate(cave,(-90))
     cave=pygame.transform.scale(cave,(200,100))
     caves.append(cave)
-
-
-
 
 #setting  up the snake images
 snake_rects=[]
@@ -100,7 +96,6 @@ for s in range(0,4):
     snakes.append(snake)
     snake_rects.append(snake_rect)
     snaketails.append(snaketail)
-
 
 running=True
 
@@ -169,7 +164,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    screen.fill((0,200,100))
+    screen.fill(('black'))
 
 
 
