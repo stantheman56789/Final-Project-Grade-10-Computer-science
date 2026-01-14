@@ -9,7 +9,7 @@ import os
 
 #always at the beginning
 pygame.init()
-
+pygame.font.int()
 #setting the screen size
 WIDTH=800
 HEIGHT=600
@@ -17,6 +17,19 @@ screen=pygame.display.set_mode((WIDTH,HEIGHT))
 
 #limiting the framerate
 clock=pygame.time.Clock()
+
+#seting up the font for the starting scroll
+stans_font = pygame.font.sysfont(stans_font, 10)
+
+stans_text = stans_font.render(f"""press any key to start click on the snakesm head to send them back to the start temperaly they get faster over time
+the lore for the game is as follows
+you are a race of treants that have kids by growing apples and a group of snakes are coming to eat them
+the snakes are a race of hydra its just one but there are many of them they are a meance to all of civilized socity
+they regualery go to bars and rack up a tab in the 1,000$ and destory the bar well drinking
+they also like eating kids if they dont eat one every 3 days they die they will eat them faster then they need to for the love of the game
+side note for the tree people you are playing as they like eating grandmas as feralizer
+the way the apples turn into the kids is that they grow into the tree person useing newtreants from the person that ate them and the bursting out of them like chest bursters
+"""
 
 #set the caption for the window
 pygame.display.set_caption('Whack a Snake')
