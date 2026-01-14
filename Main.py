@@ -30,12 +30,16 @@ for c in range(0,4):
     caves.append(cave)
 
 #setting  up the snake images
+snake_rects=[]
 snakes=[]
 for s in range(0,4):
-    snake=pygame.image.load(os.path.join('assets','cave.png')).convert_alpha()
+    snake=pygame.image.load(os.path.join('assets','snake head.png')).convert_alpha()
     snake=pygame.transform.scale(snake,(100,150))
-    snake_rect=pygame.rect(100,150,s*200,0)
+    snake_rect=snake.get_rect()
+    snake_rect.topleft=(100*(s+1),-50)
+    
     snakes.append(snake)
+    snake_rects.append(snake_rect)
 
 
 running=True
@@ -48,13 +52,16 @@ def draw():
     
     #line for where you cannot click the snakes
     pygame.draw.line(screen,('red'),(0,100),(800,100),10)
+    
+    #draw the snake
+    for s in range(0,4):
+        screen.blit(snakes[s],snake_rects[s])
 
     #draw the caves
     for c in range(0,4):
         screen.blit(caves[c],(c*200,0))
 
-    for s in range(0,4):
-        screen.blit(snakes[s],snake_rect)
+
 
 
     
