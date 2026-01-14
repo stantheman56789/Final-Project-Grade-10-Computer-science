@@ -22,6 +22,9 @@ clock=pygame.time.Clock()
 #set the caption for the window
 pygame.display.set_caption('Whack a Snake')
 
+#how fas the snakes move
+snake_speed=5
+
 #setting up the loop for the beinging text scroll
 text_scroll = True 
 
@@ -45,16 +48,19 @@ location = (400,300)
 
 while text_scroll == True:
     screen.blit(stans_text, (location)) #text scroll
-        #event handler
+#event handler
     for event in pygame.event.get():
-        text_scoll = False
+        if event.type==pygame.KEYDOWN:
+            text_scroll = False
         if event.type == pygame.QUIT:
-            running = False
+            text_scroll = False
     #location +=5 #moves the text up every loop
     
     screen.fill((0,200,100))
     
     pygame.display.flip()
+
+
 #setting up the cave pictures
 caves=[]
 for c in range(0,4):
@@ -115,11 +121,6 @@ def snake_movement():
 
         if gos[s]==True:
             snake_rects[s].y+=snake_speed
-
-
-
-
-    
 
 while running:
 
