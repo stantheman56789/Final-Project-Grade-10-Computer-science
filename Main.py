@@ -46,7 +46,7 @@ for s in range(0,4):
 
     #variables to help decide when the snakes go
     go=False
-    
+
     
     snakes.append(snake)
     snake_rects.append(snake_rect)
@@ -72,6 +72,7 @@ def draw():
         screen.blit(caves[c],(c*200,0))
 
 def snake_movement():
+    print('hi')
 
 
 
