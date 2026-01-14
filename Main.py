@@ -24,6 +24,9 @@ pygame.display.set_caption('Whack a Snake')
 #seting up the font for the starting scroll
 stans_font = pygame.font.sysfont('comicsans', 10)
 
+#setting the snakes speed
+snake_speed=5
+
 stans_text = stans_font.render(f"""press any key to start click on the snakesm head to send them back to the start temperaly they get faster over time
 the lore for the game is as follows
 you are a race of treants that have kids by growing apples and a group of snakes are coming to eat them
@@ -61,7 +64,7 @@ for s in range(0,4):
 
     #variables to help decide when the snakes go
     go=False
-    go_time=False
+    go_time=0
 
     go_times.append(go_time)
     gos.append(go)
@@ -90,7 +93,17 @@ def draw():
 
 #snakes coming in and out of the hole
 def snake_movement():
-    print('hi')
+    for s in range(0,4):
+        if gos[s]==False and snake_rect[s].top<= -50:
+            go_times[s]=random.randint(0,10)
+            if go_times[s]>=9:
+                gos[s]=True
+
+        if gos[s]==True:
+            snake_rects[s].y+=snake_speed
+
+        
+
 
 
 
