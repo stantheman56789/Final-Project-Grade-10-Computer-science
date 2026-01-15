@@ -26,7 +26,6 @@ pygame.display.set_caption('Whack a Snake')
 snake_speed=5
 
 #keeping track of the score
-global score
 score = 0
 #keeping track of your lives
 lives = 0
@@ -130,6 +129,7 @@ def snake_movement():
     for s in range(0,4):
         #make score global so i can update it in this function
         global score
+        global lives
         #deciding if the snakes go or not
         if gos[s]==False and snake_rects[s].y<= -50:
             go_times[s]=random.randint(0,60)
@@ -148,6 +148,7 @@ def snake_movement():
         if snake_rects[s].y>=500:
             gos[s]=False
             score-=1
+            lives-=1
 
         mouse_hit=pygame.mouse.get_pressed()
 
