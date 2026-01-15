@@ -40,6 +40,9 @@ running=True
 #setting up the loop for the beinging text scroll
 text_scroll = True 
 
+#make sure people dont just hold the click button down
+mouse_click=False
+
 #seting up the font for the starting scroll
 stans_font = pygame.font.SysFont('comicsans', 30)
 
@@ -162,6 +165,7 @@ def snake_movement():
         global play
         global snake_speed
         global score_check
+        global mouse_click
         #deciding if the snakes go or not
         if gos[s]==False and snake_rects[s].y<= -50 and play==True:
             go_times[s]=random.randint(0,60)
@@ -186,9 +190,13 @@ def snake_movement():
         mouse_hit=pygame.mouse.get_pressed()
 
         #clicking on the snakes
-        if mouse_hit[0] and snake_rects[s].collidepoint(pygame.mouse.get_pos()) and gos[s]==True and play==True and snake_rects[s].y>100:
+        if mouse_hit[0] and snake_rects[s].collidepoint(pygame.mouse.get_pos()) and gos[s]==True and play==True and snake_rects[s].y>100 and mouse_click==False:
             gos[s]=False
             score += 1
+            mouse_click=True
+
+        if not mouse_hit[0]:
+            mouse_click=False
 
         #send snakes back into the holes if you lose the game
         if play==False:
