@@ -49,17 +49,25 @@ stans_font = pygame.font.SysFont('comicsans', 30)
 #text to tell people to start the game
 start_txt = stans_font.render('Press any key to start', 1, 'white')
 
-stans_text = stans_font.render(f"""click on the snakesm head to send them back to the start temperaly they get faster over time
+stans_text = stans_font.render(f"""
+click on the snakesm head to send them back to the 
+start temperaly they get faster over time
 the lore for the game is as follows
-you are a race of treants that have kids by growing apples and a group of snakes are coming to eat them
-the snakes are a race of hydra its just one but there are many of them they are a meance to all of civilized socity
-they regualery go to bars and rack up a tab in the 1,000$ and destory the bar well drinking
-they also like eating kids if they dont eat one every 3 days they die they will eat them faster then they need to for the love of the game
-side note for the tree people you are playing as they like eating grandmas as feralizer
-the way the apples turn into the kids is that they grow into the tree person useing newtreants from the person that ate them and the bursting out of them like chest bursters
-a""",1,'yellow')
+you are a race of treants that have kids by growing 
+apples and a group of snakes are coming to eat them
+the snakes are a race of hydra its just one but there 
+are many of them they are a meance to all of civilized socity
+they regualery go to bars and rack up a tab in the 1,000$ 
+and destory the bar well drinking they also like eating 
+kids if they dont eat one every 3 days they die they will 
+eat them faster then they need to for the love of the game
+side note for the tree people you are playing as they 
+like eating grandmas as feralizer the way the apples 
+turn into the kids is that they grow into the tree person 
+useing newtreants from the person that ate them and the 
+bursting out of them like chest bursters""",1,'yellow')
 #location for the text on screen
-location_x = 100
+location_x = 10
 location_y = 300
 
 #setting up the cave pictures
@@ -230,8 +238,6 @@ while running:
             running = False
 
     screen.fill(('black'))
-
-
 
     #controlling the snakes
     snake_movement()
