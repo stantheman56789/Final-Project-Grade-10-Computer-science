@@ -181,7 +181,7 @@ def snake_movement():
             go_times[s]=random.randint(0,600)
             if go_times[s]>590:
                 gos[s]=True
-            if go_times[s]>=590 and life_time==True:
+            if go_times[s]>=600 and life_time==True:
                 life_y=0
                 life_x=random.randint(100,700)
                 life_time=False
@@ -224,7 +224,7 @@ def snake_movement():
 
 
         #clicking on the extra live
-        if mouse_hit[0] and life_rect.collidepoint(pygame.mouse.get_pos()) and life_time==False:
+        if mouse_hit[0] and life_rect.collidepoint(pygame.mouse.get_pos()) and life_time==False and lives<=10:
             lives+=1
             life_y+=900
             life_time=True
