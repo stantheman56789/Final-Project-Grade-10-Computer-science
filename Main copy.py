@@ -107,12 +107,14 @@ for s in range(0,4):
     snake_rects.append(snake_rect)
     snaketails.append(snaketail)
 
+#creating the apples to show how many lives you have from the bottom of your screen
 apples=[]
 for a in range(0,10):
     apple=pygame.image.load(os.path.join('assets','apple.png'))
     apple=pygame.transform.scale(apple,(50,50))
     apples.append(apple)
 
+#creating the extra life apple that will fall down acosioanlly
 extra_life=pygame.image.load(os.path.join('assets', 'apple.png'))
 extra_life=pygame.transform.scale(extra_life,(50,50))
 life_rect=extra_life.get_rect()
