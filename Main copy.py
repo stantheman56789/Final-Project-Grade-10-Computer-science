@@ -222,9 +222,6 @@ while full_game:
                 score += 1
                 mouse_click=True
 
-            if not mouse_hit[0]:
-                mouse_click=False
-
             #send snakes back into the holes if you lose the game
             if play==False:
                 gos[s]=False
@@ -236,10 +233,15 @@ while full_game:
 
 
             #clicking on the extra live
-            if mouse_hit[0] and life_rect.collidepoint(pygame.mouse.get_pos()) and life_time==False and lives<10 and lives<0:
+            if mouse_hit[0] and life_rect.collidepoint(pygame.mouse.get_pos()) and life_time==False and lives<10 and lives>0 and mouse_click==False:
                 lives+=1
                 life_y+=900
                 life_time=True
+                mouse_click=True
+
+            #resetting the mouse click
+            if not mouse_hit[0]:
+                mouse_click=False
 
     #create the text scroll 
     while text_scroll:
