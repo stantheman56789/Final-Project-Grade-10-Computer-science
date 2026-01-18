@@ -137,6 +137,9 @@ def draw():
         screen.blit(snakes[s],snake_rects[s])
         pygame.draw.rect(screen,(114,213,97),snaketails[s])
 
+    #drawing the extra life
+    screen.blit(extra_life,(life_rect))
+
     #draw the next part of the big wall at the top
     pygame.draw.rect(screen,((88,62,33)),[0,0,800,10])
 
@@ -160,8 +163,7 @@ def draw():
         screen.blit(loss_txt,(335,300))
         play=False
 
-    #drawing the extra life
-    screen.blit(extra_life,(life_rect))
+
 
 #function to make the snakes move
 def snake_movement():
@@ -269,7 +271,7 @@ while running:
     life_rect.topleft = (life_x,life_y)
     if life_y>HEIGHT:
         life_time=True
-
+ 
     #controlling the snakes
     snake_movement()
 
