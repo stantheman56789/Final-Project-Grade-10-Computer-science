@@ -163,8 +163,6 @@ def draw():
         screen.blit(loss_txt,(335,300))
         play=False
 
-
-
 #function to make the snakes move
 def snake_movement():
     for s in range(0,4):
@@ -231,7 +229,7 @@ def snake_movement():
             life_y+=900
             life_time=True
 
-#create the text
+#create the text scroll 
 while text_scroll:
 
     #event handler
