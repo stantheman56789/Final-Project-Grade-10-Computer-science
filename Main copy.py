@@ -247,7 +247,6 @@ while full_game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                full_game=False
         
         screen.fill(('black'))
 
@@ -272,8 +271,7 @@ while full_game:
         #event handler
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
-                full_game = False
+                pygame.quit()
 
         screen.fill(('black'))
 
