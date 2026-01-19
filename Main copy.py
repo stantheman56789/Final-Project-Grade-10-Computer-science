@@ -21,13 +21,18 @@ clock=pygame.time.Clock()  #make clock so I can limit the framerate later
 pygame.display.set_caption('Whack a Snake')  #set the caption for the window
 
 full_game=True  #variable for loop to allow the entire game to be repeated
+#setting up sounds
+ambiant = pygame.mixer.Sound("assets/requiem.mp3")
+clicked = pygame.mixer.Sound("assets/metal pipe.mp3")
+you_damaged = pygame.mixer.Sound("assets/sonic rings.mp3")
+you_die = pygame.mixer.Sound("assets/lego-yoda-death-sound-effect.mp3")
+ambiant_playing = False #so the ambiants doesnt keep playing
 
 text_scroll = True  #setting up the loop for the beinging text scroll. Placed here so text scroll doent play when the game is played again
 
 while full_game:  #loop to allow the full game to repeat
 
     stans_font = pygame.font.SysFont('comicsans', 30)  #seting up the font for the starting scroll
-
     #loading screen
     screen.fill(('black'))
     loading_txt = stans_font.render('Loading...',1,'White')
@@ -209,6 +214,7 @@ while full_game:  #loop to allow the full game to repeat
                 gos[s]=False
                 if play==True and master==False:
                     lives-=1
+                you_damaged.play()
 
             mouse_hit=pygame.mouse.get_pressed()
 
@@ -217,6 +223,7 @@ while full_game:  #loop to allow the full game to repeat
                 gos[s]=False
                 score += 1
                 mouse_click=True
+                clicked.play()
 
             #send snakes back into the holes if you lose the game
             if play==False:
@@ -332,6 +339,7 @@ while full_game:  #loop to allow the full game to repeat
 
         #list of every key that gets pressed
         keys=pygame.key.get_pressed()
+        
 
         #moving the extra lives
         life_y+=snake_speed
@@ -349,11 +357,13 @@ while full_game:  #loop to allow the full game to repeat
             screen.blit(loss_txt,(335,200))
             screen.blit(end_txt,(255,300))
             screen.blit(quit_txt,(280,400))
+            you_die.play
             if keys[pygame.K_p]:
                 running=False
             elif keys[pygame.K_q]:
                 running=False
                 full_game=False
+            
 
         #make display appear
         pygame.display.flip()
