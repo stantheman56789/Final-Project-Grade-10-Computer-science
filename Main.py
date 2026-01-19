@@ -24,6 +24,9 @@ pygame.display.set_caption('Whack a Snake')
 
 full_game=True
 
+#setting up the loop for the beinging text scroll
+text_scroll = True 
+
 #loop to allow the full game to repeat
 while full_game:
 
@@ -54,9 +57,6 @@ while full_game:
     play=True
     #variable to keep the game loop on
     running=True
-
-    #setting up the loop for the beinging text scroll
-    text_scroll = True 
 
     #make sure people dont just hold the click button down
     mouse_click=False
