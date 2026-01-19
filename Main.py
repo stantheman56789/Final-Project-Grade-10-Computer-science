@@ -250,6 +250,7 @@ while full_game:  #loop to allow the full game to repeat
         
         screen.fill(('black'))
 
+        #draw the text scroll to the screen
         screen.blit(stans_text, (location_x, location_y))
         screen.blit(stans_text1, (location_x,location_y+30))
         screen.blit(stans_text2, (location_x,location_y+60))
@@ -266,6 +267,7 @@ while full_game:  #loop to allow the full game to repeat
         screen.blit(stans_text13, (location_x,location_y+390))
         screen.blit(stans_text14, (location_x,location_y+420))
         screen.blit(stans_text15, (location_x,location_y+450))
+
         screen.blit(start_txt, (460,20)) #text to tell people to start the game
 
         location_y -= 3  #moves the text up every loop
