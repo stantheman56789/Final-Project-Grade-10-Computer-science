@@ -16,22 +16,17 @@ WIDTH=800
 HEIGHT=600
 screen=pygame.display.set_mode((WIDTH,HEIGHT))
 
-#make clock so I can limit the framerate later
-clock=pygame.time.Clock()
+clock=pygame.time.Clock()  #make clock so I can limit the framerate later
 
-#set the caption for the window
-pygame.display.set_caption('Whack a Snake')
+pygame.display.set_caption('Whack a Snake')  #set the caption for the window
 
-full_game=True
+full_game=True  #variable for loop to allow the entire game to be repeated
 
-#setting up the loop for the beinging text scroll
-text_scroll = True 
+text_scroll = True  #setting up the loop for the beinging text scroll. Placed here so text scroll doent play when the game is played again
 
-#loop to allow the full game to repeat
-while full_game:
+while full_game:  #loop to allow the full game to repeat
 
-    #seting up the font for the starting scroll
-    stans_font = pygame.font.SysFont('comicsans', 30)
+    stans_font = pygame.font.SysFont('comicsans', 30)  #seting up the font for the starting scroll
 
     #loading screen
     screen.fill(('black'))
@@ -39,36 +34,34 @@ while full_game:
     screen.blit(loading_txt,(335,280))
     pygame.display.flip()
 
-    #how fast the snakes move
-    snake_speed=5
+    snake_speed=5  #how fast the snakes move
 
     #keep track of the location of the extra life
     life_x=0
     life_y=900
     life_time=True
 
-    #keeping track of the score
-    score = 0
-    #keeping track of what the score was
-    score_check=0
-    #keeping track of your lives
-    lives = 3
-    #keeping track of if you have lost yet or not
-    play=True
-    #variable to keep the game loop on
-    running=True
+    
+    score = 0  #keeping track of the score
+    
+    score_check = 0  #keeping track of what the score was
+    
+    lives = 3  #keeping track of your lives
+    
+    play = True  #keeping track of if you have lost yet or not
+    
+    running = True  #variable to keep the game loop on
 
-    #make sure people dont just hold the click button down
-    mouse_click=False
+    mouse_click = False  #make sure people dont just hold the click button down
 
-    #text to tell people to start the game
-    start_txt = stans_font.render('Press any key to start', 1, 'white')
+    start_txt = stans_font.render('Press any key to start', 1, 'white')  #text to tell people to start the game
 
-    #ask people to quit or play again
+    #variable text ask people to quit or play again
     loss_txt=stans_font.render("You Lose",1,'white')
     end_txt = stans_font.render('Press p to play again',1,'white')
     quit_txt = stans_font.render('Press q to quit',1,'white')
 
+    #variable text to make the text scroll at the beginning
     stans_text = stans_font.render(f"click on the snakes head to send them back to the start",1,'yellow')
     stans_text1 = stans_font.render(f"temperaly they get faster over time",1,'yellow')
     stans_text2 = stans_font.render(f"the lore for the game is as follows",1,'yellow')
@@ -92,7 +85,7 @@ while full_game:
     location_y = 500
 
     #setting up the cave pictures
-    caves=[]
+    caves = []  #cave array
     for c in range(0,4):
         cave=pygame.image.load(os.path.join('assets','cave.png')).convert_alpha()
         cave=pygame.transform.rotate(cave,(-90))
@@ -100,11 +93,11 @@ while full_game:
         caves.append(cave)
 
     #setting  up the snake images and hitboxes and controlls for how they go
-    snake_rects=[]
-    snakes=[]
-    go_times=[]
-    gos=[]
-    snaketails=[]
+    snake_rects = []  #snake hitbox array
+    snakes = []  #snake images array
+    go_times = []  #array of variable to decide when the snakes go
+    gos = []  #array of variables that tell if the snakes are currently going
+    snaketails = []  #array of rects to act as the snaketails
     for s in range(0,4):
         snake=pygame.image.load(os.path.join('assets','snake head.png')).convert_alpha()
         snake=pygame.transform.scale(snake,(100,150))
@@ -125,7 +118,7 @@ while full_game:
         snaketails.append(snaketail)
 
     #creating the apples to show how many lives you have from the bottom of your screen
-    apples=[]
+    apples=[]  #array of apples to display extra lives
     for a in range(0,10):
         apple=pygame.image.load(os.path.join('assets','apple.png'))
         apple=pygame.transform.scale(apple,(50,50))
@@ -274,17 +267,17 @@ while full_game:
         screen.blit(stans_text15, (location_x,location_y+450))
         screen.blit(start_txt, (460,20)) #text to tell people to start the game
 
-        location_y -=3 #moves the text up every loop
+        location_y -= 3  #moves the text up every loop
 
+        keys=pygame.key.get_pressed()  #checks if each key is being pressed
 
-        keys=pygame.key.get_pressed()
-
+        #if any key is pressed end the text scroll
         if any(keys):
             text_scroll=False
         
-        pygame.display.flip()
+        pygame.display.flip()  #update the display
 
-        clock.tick(60)
+        clock.tick(60)  #limit frame rate to 60 fps
 
     #main game loop
     while running:
@@ -296,7 +289,7 @@ while full_game:
                 running = False
                 full_game = False
 
-        screen.fill(('black'))
+        screen.fill(('black'))  #make the screen plack and prevent trails from apearing
 
         #list of every key that gets pressed
         keys=pygame.key.get_pressed()
@@ -306,12 +299,10 @@ while full_game:
         life_rect.topleft = (life_x,life_y)
         if life_y>HEIGHT:
             life_time=True
-    
-        #controlling the snakes
-        snake_movement()
+     
+        snake_movement()  #controlling the snakes
 
-        #draw the images
-        draw()
+        draw()  #draw the images
         
         #when you lose the game
         if lives<=0:
