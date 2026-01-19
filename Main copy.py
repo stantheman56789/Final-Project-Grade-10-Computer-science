@@ -281,49 +281,40 @@ while full_game:  #loop to allow the full game to repeat
         keys=pygame.key.get_pressed()  #checks if each key is being pressed
 
         #secret code
-
-        #if up is entered
-        if keys[pygame.K_UP] and key_pressed == False:
+        if keys[pygame.K_UP] and key_pressed == False:  #if up is entered
             secret.append('up')
             code_entered+=1
             key_pressed=True
 
-        #if down is entered
-        elif keys[pygame.K_DOWN] and key_pressed == False:
+        elif keys[pygame.K_DOWN] and key_pressed == False:  #if down is entered
             secret.append('down')
             code_entered+=1
             key_pressed=True
 
-        #if left is entered
-        elif keys[pygame.K_LEFT] and key_pressed == False:
+        elif keys[pygame.K_LEFT] and key_pressed == False:  #if left is entered
             secret.append('left')
             code_entered += 1
             key_pressed=True
-
-        #if right is entered
-        elif keys[pygame.K_RIGHT] and key_pressed == False:
+        
+        elif keys[pygame.K_RIGHT] and key_pressed == False:  #if right is entered
             secret.append('right')
             code_entered+=1
             key_pressed=True
-
-        #if b is entered
-        elif keys[pygame.K_b] and key_pressed == False:
+     
+        elif keys[pygame.K_b] and key_pressed == False:  #if b is entered
             secret.append('b')
             code_entered += 1
             key_pressed=True
-
-        #if a is entered
-        elif keys[pygame.K_a] and key_pressed == False:
+      
+        elif keys[pygame.K_a] and key_pressed == False:  #if a is entered
             secret.append('a')
             code_entered += 1
             key_pressed = True
-
-        #if any key is pressed end the text scroll
-        elif any(keys) and key_pressed==False:
+     
+        elif any(keys) and key_pressed==False:  #if any key is pressed end the text scroll
             text_scroll=False
-
-        #if the konami code is entered
-        if not keys[pygame.K_UP] and not keys[pygame.K_DOWN] and not keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT] and not keys[pygame.K_b] and not keys[pygame.K_a]:
+   
+        if not keys[pygame.K_UP] and not keys[pygame.K_DOWN] and not keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT] and not keys[pygame.K_b] and not keys[pygame.K_a]:  #if the konami code is entered
             key_pressed = False
 
         #if konami code is entered
