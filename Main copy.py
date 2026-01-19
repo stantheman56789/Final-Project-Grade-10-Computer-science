@@ -253,34 +253,34 @@ while full_game:  #loop to allow the full game to repeat
 
         #draw the text scroll to the screen
         screen.blit(stans_text, (location_x, location_y))
-        
-        screen.blit(stans_text2, (location_x,location_y+60))
 
-        screen.blit(stans_text3, (location_x,location_y+120))
+        screen.blit(stans_text2, (location_x,location_y+90))
 
-        screen.blit(stans_text4, (location_x,location_y+180))
+        screen.blit(stans_text3, (location_x,location_y+180))
 
-        screen.blit(stans_text5, (location_x,location_y+240))
+        screen.blit(stans_text4, (location_x,location_y+270))
+
+        screen.blit(stans_text5, (location_x,location_y+360))
   
-        screen.blit(stans_text6, (location_x,location_y+300))
+        screen.blit(stans_text6, (location_x,location_y+450))
         
-        screen.blit(stans_text7, (location_x,location_y+360))
+        screen.blit(stans_text7, (location_x,location_y+540))
         
-        screen.blit(stans_text8, (location_x,location_y+420))
+        screen.blit(stans_text8, (location_x,location_y+630))
         
-        screen.blit(stans_text9, (location_x,location_y+480))
+        screen.blit(stans_text9, (location_x,location_y+720))
         
-        screen.blit(stans_text10, (location_x,location_y+540))
+        screen.blit(stans_text10, (location_x,location_y+810))
         
-        screen.blit(stans_text11, (location_x,location_y+600))
+        screen.blit(stans_text11, (location_x,location_y+900))
         
-        screen.blit(stans_text12, (location_x,location_y+660))
+        screen.blit(stans_text12, (location_x,location_y+990))
 
-        screen.blit(stans_text13, (location_x,location_y+720))
+        screen.blit(stans_text13, (location_x,location_y+1080))
 
-        screen.blit(stans_text14, (location_x,location_y+780))
+        screen.blit(stans_text14, (location_x,location_y+1170))
 
-        screen.blit(stans_text15, (location_x,location_y+840))
+        screen.blit(stans_text15, (location_x,location_y+1260))
 
         screen.blit(start_txt, (460,20)) #text to tell people to start the game
 
