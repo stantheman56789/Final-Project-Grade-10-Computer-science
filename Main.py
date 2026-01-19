@@ -24,6 +24,7 @@ pygame.display.set_caption('Whack a Snake')
 
 full_game=True
 
+#loop to allow the full game to repeat
 while full_game:
 
     #seting up the font for the starting scroll
@@ -250,7 +251,9 @@ while full_game:
         #event handler
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
+                text_scroll = False
+                running = False
+                full_game = False
         
         screen.fill(('black'))
 
@@ -289,7 +292,9 @@ while full_game:
         #event handler
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
+                text_scroll = False
+                running = False
+                full_game = False
 
         screen.fill(('black'))
 
