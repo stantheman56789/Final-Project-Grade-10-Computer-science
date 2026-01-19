@@ -24,13 +24,9 @@ full_game=True  #variable for loop to allow the entire game to be repeated
 
 text_scroll = True  #setting up the loop for the beinging text scroll. Placed here so text scroll doent play when the game is played again
 
-music = 'carnivalrides.oog' #importing the music file
-
 while full_game:  #loop to allow the full game to repeat
 
     stans_font = pygame.font.SysFont('comicsans', 30)  #seting up the font for the starting scroll
-
-    pygame.mixer_music.play(-1)
 
     #loading screen
     screen.fill(('black'))
